@@ -27,9 +27,13 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/semantic-ui-css/semantic.min.css",
               "src/styles.scss"
             ],
-            "scripts": [],
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.min.js",
+              "./node_modules/semantic-ui-css/semantic.min.js"
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {
@@ -42,7 +46,7 @@
               ],
               "optimization": true,
               "outputHashing": "all",
-              "sourceMap": false,
+              "sourceMap": true,
               "extractCss": true,
               "namedChunks": false,
               "aot": true,

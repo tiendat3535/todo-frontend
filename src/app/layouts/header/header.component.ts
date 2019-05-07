@@ -1,0 +1,16 @@
+import { AuthService } from 'src/app/core/auth/auth.service';
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'todo-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss']
+})
+export class HeaderComponent implements OnInit {
+
+  constructor(private authService: AuthService) { }
+
+  ngOnInit() {
+  }
+
+}
