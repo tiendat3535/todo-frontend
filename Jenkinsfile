@@ -1,9 +1,7 @@
 pipeline {
     agent any
 
-    tools {
-        nodejs 'node_11.14.0'
-    }
+    tools {nodejs "node_10.15.3"}
 
     stages {
         stage('Add Libraries') {
