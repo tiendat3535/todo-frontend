@@ -7,7 +7,7 @@ pipeline {
                 sh 'npm i'
             }
         }
-        stage('Test') {
+        stage('Test Todo-Frontend') {
             steps {
                 echo 'Running Test'
             }
