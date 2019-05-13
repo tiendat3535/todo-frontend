@@ -1,13 +1,22 @@
 pipeline {
     agent any
 
+    tools {
+        nodejs 'NodeJS-11.14.0'
+    }
+
     stages {
-        stage('Build') {
+        stage('Add Libraries') {
+            steps {
+                echo pwd()
+            }
+        }
+        stage('Test') {
             steps {
                 echo 'Building'
             }
         }
-        stage('Test') {
+        stage('Build') {
             steps {
                 echo 'Testing'
             }
