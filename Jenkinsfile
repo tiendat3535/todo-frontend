@@ -1,27 +1,40 @@
 pipeline {
     agent any
 
-    tools {nodejs "node_10.15.3"}
-
     stages {
         stage('Add Libraries') {
             steps {
-                echo pwd()
+                sh 'npm i'
             }
         }
         stage('Test') {
             steps {
-                echo 'Building'
+                echo 'Running Test'
             }
         }
         stage('Build') {
             steps {
-                echo 'Testing'
+                sh 'npm run build'
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying'
+                script {
+                    sh '''
+                    cd dist/todo-frontend
+                    aws s3 rm s3://phamtiendat-todo --recursive 
+                    aws s3 cp ./ s3://phamtiendat-todo --recursive
+                    '''
+                }
+            }
+        }
+
+    post {
+            failure {
+                echo "Deployment Failure!"
+            }
+            success {
+                echo "${DEPLOY_ENV} - Deployment Successful."
             }
         }
     }
