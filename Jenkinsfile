@@ -1,12 +1,11 @@
 pipeline {
     agent any
 
-    tools {nodejs "node_10.15.3"}
 
     stages {
         stage('Add Libraries') {
             steps {
-                echo 'Add Libraries'
+                echo pwd()
             }
         }
         stage('Test') {
