@@ -28,6 +28,8 @@ pipeline {
                 }
             }
         }
+    }
+
 
     post {
             failure {
@@ -36,6 +38,5 @@ pipeline {
             success {
                 echo "${DEPLOY_ENV} - Deployment Successful."
             }
-        }
     }
 }
