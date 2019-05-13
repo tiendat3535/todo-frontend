@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'npm run ng -- build'
+                sh './node_modules/.bin/ng build'
             }
         }
         stage('Deploy') {
