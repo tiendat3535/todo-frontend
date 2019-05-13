@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'npm run build'
+                sh 'npm run ng -- build'
             }
         }
         stage('Deploy') {
@@ -30,13 +30,12 @@ pipeline {
         }
     }
 
-
     post {
-            failure {
-                echo "Deployment Failure!"
-            }
-            success {
-                echo "${DEPLOY_ENV} - Deployment Successful."
-            }
+        failure {
+            echo "Deployment Failure!"
+        }
+        success {
+            echo "${DEPLOY_ENV} - Deployment Successful."
+        }
     }
 }
