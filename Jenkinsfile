@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Add Libraries') {
             steps {
-                echo pwd()
+                echo 'Add Libraries'
             }
         }
         stage('Test') {
