@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh '/var/lib/jenkins/workspace/todo-frontend/node_modules/.bin/ng build'
+                sh 'npm run ng -- build'
             }
         }
         stage('Deploy') {
