@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Add Libraries') {
             steps {
-                sh 'npm i'
+                sh 'yarn install'
             }
         }
         stage('Test Todo-Frontend') {
@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'npm run ng -- build'
+                sh 'yarn ng build'
             }
         }
         stage('Deploy') {
